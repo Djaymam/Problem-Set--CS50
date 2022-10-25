@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h3>Your Tresure</h3>
+    <table class="table table-striped">
+       <thead>
+        <tr>
+            <th> Company </th>
+            <th> Shares </th>
+            <th> Price </th>
+            <th> Total </th>
+        </tr>
+       </thead>
+        <tbody>
+            
+        {%for row in database %}
+        <tr>
+            <td>{{ row["company"] }}</td>
+            <td>{{ row["shares"] }}</td>
+            <td>{{ row["price"] }}</td>
+            <td></td>
+        </tr>
+        {% endfor  %}
+        <!--<tr>{{ "total_value" }}</tr>-->o
+        </tbody>
+        <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><strong><mark>TRESURE</mark></strong></td>
+            <td>{{ user_money }} </td>
+        </tr>
+        </tfoot>
+    </table>
+{% endblock %}
